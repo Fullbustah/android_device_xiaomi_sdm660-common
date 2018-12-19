@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2018 The Mokee Project
+# Copyright (C) 2018 LineageOS
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -137,7 +137,6 @@ QCOM_BT_USE_BTNV := true
 BOARD_HAS_QCA_BT_SOC := "cherokee"
 BLUETOOTH_HCI_USE_MCT := true
 QCOM_BT_USE_SMD_TTY := true
-
 
 # Camera
 TARGET_USES_QTI_CAMERA_DEVICE := true
@@ -293,7 +292,6 @@ WIFI_DRIVER_FW_PATH_P2P := "p2p"
 WIFI_HIDL_FEATURE_DUAL_INTERFACE := true
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 WIFI_DRIVER_OPERSTATE_PATH := "/sys/class/net/wlan0/operstate"
-
 
 # Enable dex pre-opt to speed up initial boot
 ifeq ($(HOST_OS),linux)
