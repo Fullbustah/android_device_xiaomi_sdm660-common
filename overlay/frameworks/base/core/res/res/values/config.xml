@@ -373,7 +373,7 @@
 
     <!-- Flag indicating whether round icons should be parsed from the application manifest. -->
     <bool name="config_useRoundIcon">true</bool>
-	
+
     <!-- Amount of time it takes for the light sensor to warm up in milliseconds.
           For this time after the screen turns on, the Power Manager
           will not debounce light sensor readings -->
@@ -381,5 +381,11 @@
 
     <!-- Whether notify fingerprint client of successful cancelled authentication -->
     <bool name="config_notifyClientOnFingerprintCancelSuccess">true</bool>
+
+    <!-- The RadioAccessFamilies supported by the device.
+         Empty is viewed as "all".  Only used on devices which
+         don't support RIL_REQUEST_GET_RADIO_CAPABILITY
+         format is UMTS|LTE|... -->
+	<string translatable="false" name="config_radio_access_family">CDMA|EVDO|GSM|TD_SCDMA|WCDMA|LTE</string>
 
 </resources>
