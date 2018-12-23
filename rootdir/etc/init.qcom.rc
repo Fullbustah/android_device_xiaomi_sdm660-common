@@ -802,7 +802,7 @@ service vendor.msm_irqbalance /vendor/bin/msm_irqbalance -f /system/vendor/etc/m
     disabled
 
 on charger
-    setprop persist.sys.usb.config mass_storage
+    setprop persist.vendor.usb.config mass_storage
     load_system_props
     start vendor.qcom-post-boot
 
