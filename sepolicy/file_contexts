@@ -23,7 +23,7 @@
 /persist/data/gf*                               u:object_r:fingerprint_data_file:s0
 
 # USB HAL
-/(vendor|system/vendor)/bin/hw/android\.hardware\.usb@1\.0-service\.xiaomi_8996       u:object_r:hal_usb_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.usb@1\.0-service\.xiaomi_sdm660       u:object_r:hal_usb_default_exec:s0
 
 # IR
 /dev/spidev7.1                                  u:object_r:spidev_device:s0
@@ -31,3 +31,5 @@
 # Persist
 /persist/PRSensorData\.txt                      u:object_r:sensors_persist_file:s0
 
+# KCal
+/sys/devices/platform/kcal_ctrl.0/kcal*         u:object_r:kcal_sysfs:s0
