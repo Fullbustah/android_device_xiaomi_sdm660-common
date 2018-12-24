@@ -1,4 +1,4 @@
-# 
+#
 # Copyright (C) 2018 The Mokee Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -35,7 +35,7 @@ DEVICE_PACKAGE_OVERLAYS := device/xiaomi/sdm660-common/overlay
 
 PRODUCT_ENFORCE_RRO_TARGETS := \
     framework-res
-    
+
 # Platform properties
 $(call inherit-product, $(PLATFORM_PATH)/platform_prop.mk)
 
@@ -116,7 +116,7 @@ PRODUCT_COPY_FILES += \
     $(TOPDIR)frameworks/av/services/audiopolicy/config/default_volume_tables.xml:/$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml \
     $(TOPDIR)frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:/$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml \
     $(TOPDIR)frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:/$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml
-    
+
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.af.client_heap_size_kbyte=7168 \
 	ro.config.media_vol_steps=25 \
@@ -129,7 +129,7 @@ PRODUCT_PACKAGES += \
 # Sensor HAL conf file
 PRODUCT_COPY_FILES += \
     $(PLATFORM_PATH)/sensors/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf
-    
+
 # Exclude TOF sensor from InputManager
 PRODUCT_COPY_FILES += \
     $(PLATFORM_PATH)/configs/excluded-input-devices.xml:system/etc/excluded-input-devices.xml
@@ -159,7 +159,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     cneapiclient \
     com.quicinc.cne
-    
+
 # FM packages
 PRODUCT_PACKAGES += \
     libqcomfm_jni \
@@ -190,16 +190,16 @@ PRODUCT_PACKAGES += \
     android.hardware.configstore@1.0-service \
     android.hardware.broadcastradio@1.0-impl
 
-# Doze
+# KCal
 PRODUCT_PACKAGES += \
-    XiaomiDoze
-    
+    KCal
+
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl:32 \
     android.hardware.drm@1.0-service \
     android.hardware.drm@1.1-service.clearkey
-    
+
 # FBE support
 PRODUCT_COPY_FILES += \
     $(PLATFORM_PATH)/rootdir/bin/init.qti.qseecomd.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.qti.qseecomd.sh
@@ -262,17 +262,17 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     ebtables \
     ethertypes
-    
+
 # MSM IRQ Balancer configuration file for SDM660
 PRODUCT_COPY_FILES += \
 	$(PLATFORM_PATH)/configs/msm_irqbalance.conf:$(TARGET_COPY_OUT_VENDOR)/etc/msm_irqbalance.conf
-    
+
 # Keylayouts
 PRODUCT_COPY_FILES += \
     $(PLATFORM_PATH)/keylayout/sdm660-snd-card_Button_Jack.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/sdm660-snd-card_Button_Jack.kl \
     $(PLATFORM_PATH)/keylayout/uinput-goodix.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/uinput-goodix.kl
 
-# Google Media Codec    
+# Google Media Codec
 PRODUCT_COPY_FILES += \
 	frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_telephony.xml \
@@ -322,7 +322,7 @@ PRODUCT_PACKAGES += \
 # Fstab
 PRODUCT_PACKAGES += \
     fstab.qcom
-    
+
 # Ramdisk
 PRODUCT_PACKAGES += \
     init.class_main.sh \
@@ -333,7 +333,7 @@ PRODUCT_PACKAGES += \
     init.qcom.usb.sh \
     init.qti.fm.sh \
     init.qti.qseecomd.sh
-    
+
 PRODUCT_PACKAGES += \
     init.msm.usb.configfs.rc \
     init.qcom.rc \
@@ -369,7 +369,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl:64 \
     android.hardware.sensors@1.0-service
-    
+
 # IRSC
 PRODUCT_COPY_FILES += \
     $(PLATFORM_PATH)/configs/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config
@@ -432,7 +432,7 @@ PRODUCT_COPY_FILES += \
 # High performance VR feature
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.vr.high_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.vr.high_performance.xml
-    
+
 # rild
 PRODUCT_PROPERTY_OVERRIDES += rild.libpath=/system/vendor/lib64/libril-qc-qmi-1.so
 
