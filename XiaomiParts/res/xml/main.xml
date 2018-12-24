@@ -14,14 +14,44 @@
      limitations under the License.
 -->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-
     <PreferenceCategory
         android:key="camera"
         android:title="@string/camera_title">
+
         <SwitchPreference
+            android:defaultValue="false"
             android:key="hal3"
-            android:defaultValue="true"
             android:title="@string/camera_hal3_title" />
+
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="eis"
+            android:title="@string/camera_eis_title" />
+
     </PreferenceCategory>
 
+    <PreferenceCategory
+        android:key="display"
+        android:title="@string/display_title">
+
+        <Preference
+            android:key="device_kcal"
+            android:persistent="false"
+            android:title="@string/device_kcal_title">
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetClass="org.carbonrom.settings.kcal.KCalSettingsActivity"
+                android:targetPackage="org.carbonrom.settings.kcal" />
+        </Preference>
+
+        <Preference
+            android:key="device_doze"
+            android:persistent="false"
+            android:title="@string/device_doze_title">
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetPackage="org.carbonrom.settings.doze"
+                android:targetClass="org.carbonrom.settings.doze.DozeSettingsActivity" />
+        </Preference>
+    </PreferenceCategory>
 </PreferenceScreen>
