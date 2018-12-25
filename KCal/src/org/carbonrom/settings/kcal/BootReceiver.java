@@ -31,7 +31,7 @@ public class BootReceiver extends BroadcastReceiver implements Utils {
         }
     }
 
-    void restoreValue(String path, String value) {
+    private void restoreValue(String path, String value) {
         if (path == null) {
             return;
         }

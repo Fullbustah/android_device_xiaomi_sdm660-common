@@ -39,26 +39,16 @@ public class KCalSettings extends PreferenceFragment implements
 
         boolean enabled = sharedPrefs.getBoolean(PREF_ENABLED, false);
         mSetOnBoot = (SwitchPreference) findPreference(PREF_SETONBOOT);
-        //mSetOnBoot.setEnabled(sharedPrefs.getBoolean(PREF_SETONBOOT, false));
         mEnabled = (SwitchPreference) findPreference(PREF_ENABLED);
         mEnabled.setTitle(enabled ? R.string.kcal_enabled : R.string.kcal_disabled);
-        //mSetOnBoot.setEnabled(enabled);
         mMin = (CustomSeekBarPreference) findPreference(PREF_MINIMUM);
-        //mMin.setEnabled(enabled);
         mRed = (CustomSeekBarPreference) findPreference(PREF_RED);
-        //mRed.setEnabled(enabled);
         mGreen = (CustomSeekBarPreference) findPreference(PREF_GREEN);
-        //mGreen.setEnabled(enabled);
         mBlue = (CustomSeekBarPreference) findPreference(PREF_BLUE);
-        //mBlue.setEnabled(enabled);
         mSaturation = (CustomSeekBarPreference) findPreference(PREF_SATURATION);
-        //mSaturation.setEnabled(enabled);
         mValue = (CustomSeekBarPreference) findPreference(PREF_VALUE);
-        //mValue.setEnabled(enabled);
         mContrast = (CustomSeekBarPreference) findPreference(PREF_CONTRAST);
-        //mContrast.setEnabled(enabled);
         mHue = (CustomSeekBarPreference) findPreference(PREF_HUE);
-        //mHue.setEnabled(enabled);
 
         prefState(enabled);
 
@@ -148,7 +138,7 @@ public class KCalSettings extends PreferenceFragment implements
         mHue.setEnabled(state);
     }
 
-    void setmEnabled(boolean value) {
+    private void setmEnabled(boolean value) {
         if (mFileUtils.isSupported(Utils.KCAL_ENABLE)) {
             mFileUtils.setValue(Utils.KCAL_ENABLE, value);
         }
@@ -157,52 +147,52 @@ public class KCalSettings extends PreferenceFragment implements
         prefState(value);
     }
 
-    void setmMinimum(int value) {
+    private void setmMinimum(int value) {
         if (mFileUtils.isSupported(Utils.KCAL_MIN)) {
             mFileUtils.setValue(Utils.KCAL_MIN, value);
         }
     }
 
-    void setmRed(int value) {
+    private void setmRed(int value) {
         String rgbString = value + " " + mGreen.getValue() + " " + mBlue.getValue();
         if (mFileUtils.isSupported(Utils.KCAL_RGB)) {
             mFileUtils.setValue(Utils.KCAL_RGB, rgbString);
         }
     }
 
-    void setmGreen(int value) {
+    private void setmGreen(int value) {
         String rgbString = mRed.getValue() + " " + value + " " + mBlue.getValue();
         if (mFileUtils.isSupported(Utils.KCAL_RGB)) {
             mFileUtils.setValue(Utils.KCAL_RGB, rgbString);
         }
     }
 
-    void setmBlue(int value) {
+    private void setmBlue(int value) {
         String rgbString = mRed.getValue() + " " + mGreen.getValue() + " " + value;
         if (mFileUtils.isSupported(Utils.KCAL_RGB)) {
             mFileUtils.setValue(Utils.KCAL_RGB, rgbString);
         }
     }
 
-    void setmSaturation(int value) {
+    private void setmSaturation(int value) {
         if (mFileUtils.isSupported(Utils.KCAL_SAT)) {
             mFileUtils.setValue(Utils.KCAL_SAT, value + SATURATION_OFFSET);
         }
     }
 
-    void setmValue(int value) {
+    private void setmValue(int value) {
         if (mFileUtils.isSupported(Utils.KCAL_VAL)) {
             mFileUtils.setValue(Utils.KCAL_VAL, value + VALUE_OFFSET);
         }
     }
 
-    void setmContrast(int value) {
+    private void setmContrast(int value) {
         if (mFileUtils.isSupported(Utils.KCAL_CONT)) {
             mFileUtils.setValue(Utils.KCAL_CONT, value + CONTRAST_OFFSET);
         }
     }
 
-    void setmHue(int value) {
+    private void setmHue(int value) {
         if (mFileUtils.isSupported(Utils.KCAL_HUE)) {
             mFileUtils.setValue(Utils.KCAL_HUE, value);
         }

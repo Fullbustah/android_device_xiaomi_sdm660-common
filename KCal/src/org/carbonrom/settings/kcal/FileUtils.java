@@ -1,21 +1,20 @@
 package org.carbonrom.settings.kcal;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class FileUtils {
+class FileUtils {
 
     boolean isSupported(String path) {
         return fileWritable(path);
     }
 
-    public static boolean fileWritable(String filename) {
+    private static boolean fileWritable(String filename) {
         return fileExists(filename) && new File(filename).canWrite();
     }
 
-    public static boolean fileExists(String filename) {
+    private static boolean fileExists(String filename) {
         if (filename == null) {
             return false;
         }
@@ -31,12 +30,9 @@ public class FileUtils {
             fos.write((value ? "1" : "0").getBytes());
             fos.flush();
             fos.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 
     void setValue(String path, int value) {
@@ -48,8 +44,6 @@ public class FileUtils {
             fos.write(Integer.toString(value).getBytes());
             fos.flush();
             fos.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -64,8 +58,6 @@ public class FileUtils {
             fos.write(value.getBytes());
             fos.flush();
             fos.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }

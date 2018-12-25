@@ -34,7 +34,7 @@ public class KCalSettingsActivity extends Activity {
         return mContext;
     }
 
-    void reset() {
+    private void reset() {
         mKCalSettingsFragment.mSetOnBoot.setChecked(Utils.SETONBOOT_DEFAULT);
         mKCalSettingsFragment.mRed.setValue(Utils.RED_DEFAULT);
         mKCalSettingsFragment.mRed.refresh(Utils.RED_DEFAULT);
@@ -42,6 +42,8 @@ public class KCalSettingsActivity extends Activity {
         mKCalSettingsFragment.mGreen.refresh(Utils.GREEN_DEFAULT);
         mKCalSettingsFragment.mBlue.setValue(Utils.BLUE_DEFAULT);
         mKCalSettingsFragment.mBlue.refresh(Utils.BLUE_DEFAULT);
+        mKCalSettingsFragment.mMin.setValue(Utils.MINIMUM_DEFAULT);
+        mKCalSettingsFragment.mMin.refresh(Utils.MINIMUM_DEFAULT);
         mKCalSettingsFragment.mSaturation.setValue(Utils.SATURATION_DEFAULT);
         mKCalSettingsFragment.mSaturation.refresh(Utils.SATURATION_DEFAULT);
         mKCalSettingsFragment.mValue.setValue(Utils.VALUE_DEFAULT);

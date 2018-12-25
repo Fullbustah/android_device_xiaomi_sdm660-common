@@ -1,6 +1,6 @@
 package org.carbonrom.settings.kcal;
 
-public interface Utils {
+interface Utils {
     String PREF_ENABLED = "kcal_enabled";
     String PREF_SETONBOOT = "set_on_boot";
     String PREF_MINIMUM = "kcal_minimum";
