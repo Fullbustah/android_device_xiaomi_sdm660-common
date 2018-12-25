@@ -31,6 +31,32 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:key="torch"
+        android:title="@string/torch_title">
+
+        <org.carbonrom.settings.device.TorchSeekBarPreference
+            android:defaultValue="100"
+            android:key="torch_brightness"
+            android:max="255"
+            android:min="1"
+            android:title="@string/torch_brightness_title" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="vibration"
+        android:title="@string/vibration_title">
+
+        <org.carbonrom.settings.device.VibrationSeekBarPreference
+            android:defaultValue="80"
+            android:key="vibration_strength"
+            android:max="100"
+            android:min="1"
+            android:title="@string/vibration_strength_title" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="display"
         android:title="@string/display_title">
 
@@ -50,8 +76,8 @@
             android:title="@string/device_doze_title">
             <intent
                 android:action="android.intent.action.MAIN"
-                android:targetPackage="org.carbonrom.settings.doze"
-                android:targetClass="org.carbonrom.settings.doze.DozeSettingsActivity" />
+                android:targetClass="org.carbonrom.settings.doze.DozeSettingsActivity"
+                android:targetPackage="org.carbonrom.settings.doze" />
         </Preference>
     </PreferenceCategory>
 </PreferenceScreen>
