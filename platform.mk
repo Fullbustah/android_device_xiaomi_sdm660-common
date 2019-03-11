@@ -45,6 +45,7 @@ $(call inherit-product, $(PLATFORM_PATH)/platform_prop.mk)
 
 # Alipay
 PRODUCT_PACKAGES += \
+  IFAAService \
   org.ifaa.android.manager
 
 PRODUCT_BOOT_JARS += \
@@ -405,6 +406,10 @@ PRODUCT_PACKAGES += \
 	android.hardware.thermal@1.0-impl \
 	android.hardware.thermal@1.0-service \
 	thermal.sdm660
+
+# ThermalController app
+PRODUCT_PACKAGES += \
+	ThermalController
 
 # Touchscreen
 PRODUCT_PACKAGES += \
